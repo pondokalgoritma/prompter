@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,14 +36,11 @@
     <header class="relative z-10 px-6 py-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold text-white">Prompter</h1>
         <nav class="space-x-4">
-            
-            <?php session_start(); ?>
             <?php if(! isset($_SESSION['user'])) : ?>
                 <button @click="openModal" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded">Login</button>
             <?php else: ?>
                 <a href="/prompts"><button class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded">Prompts</button></a>
             <?php endif; ?>
-
         </nav>
     </header>
 
